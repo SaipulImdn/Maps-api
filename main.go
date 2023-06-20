@@ -17,7 +17,7 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
 		password := r.FormValue("password")
 
 		if username == "admin" && password == "password" {
-			http.Redirect(w, r, "public/home", http.StatusSeeOther)
+			http.Redirect(w, r, "/home", http.StatusSeeOther)
 			return
 		}
 		fmt.Fprintf(w, "Login failed. Please try again")
