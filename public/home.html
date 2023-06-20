@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<style>
+		#map {
+			height: 400px;
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h2>Home</h2>
+		<div id="map"></div>
+	</div>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+	<script>
+		function initMap() {
+			// Inisialisasi peta
+			var map = new google.maps.Map(document.getElementById('map'), {
+				center: {lat: -6.2088, lng: 106.8456}, 
+				zoom: 12 
+			});
+
+	
+			var marker = new google.maps.Marker({
+				position: {lat: -6.2088, lng: 106.8456}, 
+				map: map,
+				title: 'Lokasi Anda'
+			});
+		}
+	</script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+</body>
+</html>
